@@ -1,0 +1,17 @@
+name: 'Composite Basic Node'
+description: 'Composite Basic Node '
+inputs:
+  version: # determines what node version to install
+    required: false
+    description: 'input description here'
+    default: '12'
+outputs: {}
+runs:
+    using: "composite"
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: ${{inputs.version}}
+      - run: npm test
+        shell: bash
