@@ -14,4 +14,4 @@ runs:
         with:
           node-version: ${{inputs.version}}
       - run: npm test
-        shell: bash
+         shell: bash
